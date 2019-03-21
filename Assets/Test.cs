@@ -18,6 +18,7 @@ public class Boss {
 		this.hp -= damage;
 	}
 
+	//魔法用の関数
 	public void Magic(int power){
 		this.mp -= power;
 		if (mp > 0) {
