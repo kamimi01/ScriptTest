@@ -20,12 +20,12 @@ public class Boss {
 
 	//魔法用の関数
 	public void Magic(int power){
-		//if (mp > 0) {
-			this.mp -= power;
+		if (mp > 2) {
 			Debug.Log ("魔法攻撃をした。残りMPは" + mp + "。");
-		//} else {
-		//	Debug.Log ("MPが足りないため魔法が使えない。");
-		//}
+			this.mp -= power;
+		} else {
+			Debug.Log ("MPが足りないため魔法が使えない。");
+		}
 	}
 
 }
@@ -59,15 +59,11 @@ public class Test : MonoBehaviour {
 		lastboss.Attack();
 		lastboss.Defence (3);
 
-		//魔法を12回使用する
-		for (int i = 0; i < 12; i++) {
+		//魔法を13回使用する
+		for (int i = 0; i < 13; i++) {
 			Debug.Log ((i+1) + "回目!");
-			if (i < 10) {
 				lastboss.Magic (5);
-			} else {
-				Debug.Log ("MPが足りないため魔法が使えない。");
-			}
-		}
+			} 
 	}
 
 	// Update is called once per frame
